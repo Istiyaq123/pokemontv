@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pokemon I Choose You</title>
+<style type="text/css">
+div#video_player_box{ width:550px; background:#000;}
+div#video_controls_bar{ background:#968f78; padding:10px; color:#ccc; font-family:arial;}
+input#volumeslider{ width: 80px}
+input[type='range']{
+	-webkit-appearance: none !important;
+    background: #000;
+    border: #666 1px solid;
+    height:4px;
+}
+input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none !important;
+    background: #FFF;
+    height: 15px;
+    width: 15px;
+    border-radius:100%;
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+<div id="video_player_box">
+   <video id="my_video" width="550">
+     <source src="https://lbfull.watchanimesub.net/getvid?evid=QYI7H1C6FnCh_6x-abW2zGTqAjiTbn3re385s-hx8jDR6hRvWoioGwpcNZ2wLI8I_W0jLvhWoHwEYFNtoSP-mIVTz91TqgAUS8nl1ofBF2aMHW7rxaxJAJll9E-OD7Go_Zm1aK6GonUVPluw2o0PWmS4SjFhQlixuxXVt7zYCfSZxQlY2D7vSBb3o5MSNtbQWy5Md4MFV0MSm-JTYSux-zaRUTKpkkhqbTPmCnLFkUEs3l-PCdb4DN-W8QJ4xDPpQfM7afuiluDSqXwU98kFE2dqbqtmQvUftE7AqIAQGp2oj3Lup8e7muIvN5US0qdkghuWjHdT13JU44a-cRrVIayxWGGK34JclhTxIxkur-wTpNVSsuiRiKNlVNAPgnQJKJr5Lshj_MFxHcQd6M6w4Ezx_x5LumIoxsYsx_U1fxprlsXATsIPcpWllrsiw0WiIFGbBpk_w5_DsEPbvu1BvJrXNd9cw3aba03T1UgVSOE">
+   </video>
+   <div id="video_controls_bar">
+     <button class="button" id="playpausebtn">Play</button>
+     <input id="seekslider" type="range" min="0" max="100" value="1" step="1" style="width:180px">
+     <span id="curtimetext"></span> / <span id="durtimetext"></span>
+     <button class="button" id="mutebtn">Mute</button>
+     <input id="volumeslider" type="range" min="0" max="100" value="100" step="1">
+     <button class="button" id="fullscreenbtn">&nbsp;</button>
+   </div>
+</div>
+<div>
+    <p style="font-family:arial"><a href="s01.html">Pok&eacute;mon: Indigo League</a></p>
+    <p style="font-family:arial"><a href="s01ep2.html">Episode 2: Pokemon Emergency &#8594;</p>
+<script>
+var vid, playbtn, seekslider, curtimetext, durtimetext, mutebtn, volumeslider, fullscreenbtn;
+
+function intializePlayer(){
+   // Set object references 
+   vid = document.getElementById("my_video");
+   playbtn = document.getElementById("playpausebtn");
+   seekslider = document.getElementById("seekslider");
+   curtimetext = document.getElementById("curtimetext");
+   durtimetext = document.getElementById("durtimetext");
+   mutebtn = document.getElementById("mutebtn");
+   volumeslider = document.getElementById("volumeslider");
+   fullscreenbtn = document.getElementById("fullscreenbtn");
+   // Add event listeners
+   playbtn.addEventListener("click",playPause,false);
+   seekslider.addEventListener("change",vidSeek,false);
+   vid.addEventListener("timeupdate",seektimeupdate,false);
+   mutebtn.addEventListener("click",vidmute,false);
+   volumeslider.addEventListener("change",setvolume,false);
+   fullscreenbtn.addEventListener("click",toggleFullScreen,false);
+}
+window.onload = intializePlayer;
+function playPause(){
+	if(vid.paused){
+    	vid.play();
+        playbtn.innerHTML = "Pause";
+    } else {
+    	vid.pause();
+        playbtn.innerHTML = "Play";
+    }
+}
+function vidSeek(){
+	var seekto = vid.duration * (seekslider.value / 100);
+    vid.currentTime = seekto;
+}
+function seektimeupdate(){
+	var nt = vid.currentTime * (100 / vid.duration);
+    seekslider.value = nt;
+    var curmins = Math.floor(vid.currentTime / 60);
+    var cursecs = Math.floor(vid.currentTime - curmins * 60);
+    var durmins = Math.floor(vid.duration / 60);
+    var dursecs = Math.floor(vid.duration - durmins * 60);
+    if(cursecs < 10){ cursecs = "0"+cursecs; }
+    if(dursecs < 10){ dursecs = "0"+dursecs; }
+    if(curmins < 10){ curmins = "0"+curmins; }
+    if(durmins < 10){ durmins = "0"+durmins; }
+    curtimetext.innerHTML = curmins+":"+cursecs;
+    durtimetext.innerHTML = durmins+":"+dursecs;
+}
+function vidmute(){
+	if(vid.muted){
+    	vid.muted = false;
+        mutebtn.innerHTML = "Mute";
+    } else {
+    	vid.muted = true;
+        mutebtn.innerHTML = "Unmute";
+    }
+}
+function setvolume(){
+	vid.volume = volumeslider.value / 100;
+}
+function toggleFullScreen(){
+	if(vid.requestFullScreen){
+    	vid.requestFullScreen();
+    } else if(vid.webkitRequestFullScreen){
+    	vid.webkitRequestFullScreen();
+    } else if(vid.mozRequestFullScreen){
+    	vid.mozRequestFullScreen();
+    }
+}
+</script>
+</body>
+</html>
