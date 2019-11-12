@@ -1,8 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Pokemon I Choose You</title>
+<title>Pok&eacute;mon: S01 Ep01</title>
 <style type="text/css">
+@font-face {
+  font-family: Myfont;
+  src: url(icon.ttf);
+}
+.button {
+  background-color: #968f78;
+  border: none;
+  color: white;
+  padding: 4px 5px;
+  text-align: center;
+  font-size: 16px;
+  font-family:Myfont;
+  cursor: pointer;
+}
 div#video_player_box{ width:550px; background:#000;}
 div#video_controls_bar{ background:#968f78; padding:10px; color:#ccc; font-family:arial;}
 input#volumeslider{ width: 80px}
@@ -20,53 +34,31 @@ input[type='range']::-webkit-slider-thumb {
     border-radius:100%;
     cursor:pointer;
 }
-    <style>
-      @font-face {
-  font-family: Video;
-  src: url(icon.ttf);
-}
-  </style>
 </style>
-</head>
-<body>
-<div id="video_player_box">
-   <video id="my_video" width="550">
-     <source src="https://lbfull.watchanimesub.net/getvid?evid=QYI7H1C6FnCh_6x-abW2zGTqAjiTbn3re385s-hx8jDR6hRvWoioGwpcNZ2wLI8I_W0jLvhWoHwEYFNtoSP-mIVTz91TqgAUS8nl1ofBF2aMHW7rxaxJAJll9E-OD7Go_Zm1aK6GonUVPluw2o0PWmS4SjFhQlixuxXVt7zYCfSZxQlY2D7vSBb3o5MSNtbQWy5Md4MFV0MSm-JTYSux-zaRUTKpkkhqbTPmCnLFkUEs3l-PCdb4DN-W8QJ4xDPpQfM7afuiluDSqXwU98kFE2dqbqtmQvUftE7AqIAQGp2oj3Lup8e7muIvN5US0qdkghuWjHdT13JU44a-cRrVIayxWGGK34JclhTxIxkur-wTpNVSsuiRiKNlVNAPgnQJKJr5Lshj_MFxHcQd6M6w4Ezx_x5LumIoxsYsx_U1fxprlsXATsIPcpWllrsiw0WiIFGbBpk_w5_DsEPbvu1BvJrXNd9cw3aba03T1UgVSOE">
-   </video>
-   <div id="video_controls_bar">
-     <button class="button" id="playpausebtn">A</button>
-     <input id="seekslider" type="range" min="0" max="100" value="1" step="1" style="width:180px">
-     <span id="curtimetext"></span> / <span id="durtimetext"></span>
-     <button class="button" id="mutebtn">L</button>
-     <input id="volumeslider" type="range" min="0" max="100" value="100" step="1">
-     <button class="button" id="fullscreenbtn">D</button>
-   </div>
-</div>
-<div>
-    <p style="font-family:arial"><a href="s01.html">Pok&eacute;mon: Indigo League</a></p>
-    <p style="font-family:arial"><a href="s01ep2.html">Episode 2: Pokemon Emergency &#8594;</p>
 <script>
 var vid, playbtn, seekslider, curtimetext, durtimetext, mutebtn, volumeslider, fullscreenbtn;
 
+
 function intializePlayer(){
-   // Set object references 
-   vid = document.getElementById("my_video");
-   playbtn = document.getElementById("playpausebtn");
-   seekslider = document.getElementById("seekslider");
-   curtimetext = document.getElementById("curtimetext");
-   durtimetext = document.getElementById("durtimetext");
-   mutebtn = document.getElementById("mutebtn");
-   volumeslider = document.getElementById("volumeslider");
-   fullscreenbtn = document.getElementById("fullscreenbtn");
-   // Add event listeners
-   playbtn.addEventListener("click",playPause,false);
-   seekslider.addEventListener("change",vidSeek,false);
-   vid.addEventListener("timeupdate",seektimeupdate,false);
-   mutebtn.addEventListener("click",vidmute,false);
-   volumeslider.addEventListener("change",setvolume,false);
-   fullscreenbtn.addEventListener("click",toggleFullScreen,false);
+	// Set object references
+	vid = document.getElementById("my_video");
+    playbtn = document.getElementById("playpausebtn");
+    seekslider = document.getElementById("seekslider");
+    curtimetext = document.getElementById("curtimetext");
+    durtimetext = document.getElementById("durtimetext");
+    mutebtn = document.getElementById("mutebtn");
+    volumeslider = document.getElementById("volumeslider");
+    fullscreenbtn = document.getElementById("fullscreenbtn");
+    // Add event listeners
+    playbtn.addEventListener("click",playPause,false);
+    seekslider.addEventListener("change",vidSeek,false);
+    vid.addEventListener("timeupdate",seektimeupdate,false);
+    mutebtn.addEventListener("click",vidmute,false);
+    volumeslider.addEventListener("change",setvolume,false);
+    fullscreenbtn.addEventListener("click",toggleFullScreen,false);
 }
 window.onload = intializePlayer;
+
 function playPause(){
 	if(vid.paused){
     	vid.play();
@@ -116,5 +108,21 @@ function toggleFullScreen(){
     }
 }
 </script>
+</head>
+<body>
+<p style="font-family:arial;">Pok&eacute;mon: Indigo League: Episode 1: I Choose You</p>
+<div id="video_player_box">
+  <video id="my_video" width="550" height="320" autoplay>
+    <source src="Shane.mp4">
+  </video>
+  <div id="video_controls_bar">
+    <button class="button" id="playpausebtn">B</button>
+    <input id="seekslider" type="range" min="0" max="100" value="1" step="1" style="width:180px">
+    <span id="curtimetext"></span> / <span id="durtimetext"></span>
+    <button class="button" id="mutebtn">L</button>
+    <input id="volumeslider" type="range" min="0" max="100" value="100" step="1">
+    <button class="button" id="fullscreenbtn">D</button>
+  </div>
+</div>
 </body>
 </html>
