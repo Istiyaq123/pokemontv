@@ -109,10 +109,10 @@ function toggleFullScreen(){
 <body>
 <p style="font-family:arial;">Pok&eacute;mon: Diamond and Pearl: Episode 10: Not On My Watch Ya Don't!</p>
 <div id="video_player_box">
-  <video id="my_video" width="550" height="320" controlslist="nodownload nofullscreen" autoplay>
+  <video oncontextmenu="return false;" id="my_video" width="550" height="320" controlslist="nodownload nofullscreen" autoplay>
     <source src="https://pokemondp.000webhostapp.com/volume2/dp10.mp4">
   </video>
-  <div id="video_controls_bar">
+  <div oncontextmenu="return false;" id="video_controls_bar">
     <button class="button" id="playpausebtn">B</button>
     <input id="seekslider" type="range" min="0" max="100" value="1" step="1" style="width:180px">
     <span id="curtimetext"></span> / <span id="durtimetext"></span>
