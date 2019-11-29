@@ -38,6 +38,7 @@ input[type='range']::-webkit-slider-thumb {
 </head>
 
 <body>
+    <p style="font-family:arial"><a href="s11/ep27">Chimchar goes bannans over Blaze in "Chim-Charr!"</a>
     <p style="font-family:arial"><a href="s11/ep1">Pok&eacute;mon Battle Dimensions Episode 1 out now</a></p>
     <p style="font-family:arial">Pok&eacute;mon Episodes will be available with a 16 : 9 ratio</p>
     <p style="font-family:arial"><a href="m9">Pok&eacute;mon Ranger and the Temple of the Sea movie available now on Pok&eacute;mon episodes online</a></p>
@@ -45,7 +46,21 @@ input[type='range']::-webkit-slider-thumb {
     <p style="font-family:arial"><a href="m8">Pok&eacute;mon The Movie: Lucario and the Mystery of Mew</a></p>
     <p style="font-family:arial"><a href="s6ep2">Pok&eacute;mon Advanced: Episode 2: A Ruin with a View</a></p>
     <button onclick="goBack()">Go Back</button>
-    <script>
+    <p style="font-family:arial"><a href="s11/ep27">Pok&eacute;mon Diamond and Pearl: Battle Dimensions Episode 27: Chim-Charr!</a></p>
+    <div id="video_player_box">
+  <video oncontextmenu="return false;" id="my_video" width="550" height="320" poster="/images/w3schools_green.jpg" controlslist="nodownload nofullscreen" autoplay>
+    <source src="https://dpbattlesdimensions.000webhostapp.com/ep27.mp4">
+  </video>
+  <div oncontextmenu="return false;" id="video_controls_bar">
+    <button class="button" id="playpausebtn">B</button>
+    <input id="seekslider" type="range" min="0" max="100" value="1" step="1" style="width:180px">
+    <span id="curtimetext"></span> / <span id="durtimetext"></span>
+    <button class="button" id="mutebtn">L</button>
+    <input id="volumeslider" type="range" min="0" max="100" value="100" step="1">
+    <button class="button" id="fullscreenbtn">D</button>
+  </div>
+</div>
+<script>
 function goBack() {
   window.history.back();
 }
