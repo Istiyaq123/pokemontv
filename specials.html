@@ -49,7 +49,7 @@ input[type='range']::-webkit-slider-thumb {
     <button onclick="goBack()">Go Back</button>
     <center><p style="font-family:arial"><a href="s11/ep27">Pok&eacute;mon Diamond and Pearl: Battle Dimensions Episode 27: Chim-Charr!</a></p>
     <div style="text-align:center" id="video_player_box">
-  <video oncontextmenu="return false;" id="my_video" width="550" height="320" poster="https://cdn.bulbagarden.net/upload/thumb/b/b1/DP081.png/200px-DP081.png" controlslist="nodownload nofullscreen">
+  <video onclick="on()" oncontextmenu="return false;" id="my_video" width="550" height="320" poster="https://cdn.bulbagarden.net/upload/thumb/b/b1/DP081.png/200px-DP081.png" controlslist="nodownload nofullscreen">
     <source src="https://dpbattlesdimensions.000webhostapp.com/ep27.mp4">
   </video>
   <div oncontextmenu="return false;" id="video_controls_bar">
@@ -131,6 +131,16 @@ function toggleFullScreen(){
     	vid.webkitRequestFullScreen();
     } else if(vid.mozRequestFullScreen){
     	vid.mozRequestFullScreen();
+    }
+}
+
+function on() {
+  if(vid.paused){
+    	vid.play();
+        playbtn.innerHTML = "B";
+    } else {
+    	vid.pause();
+        playbtn.innerHTML = "A";
     }
 }
     </script>
