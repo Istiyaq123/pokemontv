@@ -65,6 +65,16 @@ function playPause(){
         playbtn.innerHTML = "A";
     }
 }
+
+function on(){
+	if(vid.paused){
+    	vid.play();
+        playbtn.innerHTML = "B";
+    } else {
+    	vid.pause();
+        playbtn.innerHTML = "A";
+    }
+}
 function vidSeek(){
 	var seekto = vid.duration * (seekslider.value / 100);
     vid.currentTime = seekto;
@@ -109,7 +119,7 @@ function toggleFullScreen(){
 <body>
 <p style="font-family:arial;">Pok&eacute;mon: Diamond and Pearl: Galactic Battles Episode 52: Gotta Get a Gible!</p>
 <div id="video_player_box">
-  <video oncontextmenu="return false;" id="my_video" width="550" height="320" controlslist="nodownload nofullscreen" autoplay>
+  <video onclick="on()" oncontextmenu="return false;" id="my_video" width="550" height="320" controlslist="nodownload nofullscreen" autoplay>
     <source src="https://dpgalacticbattles.000webhostapp.com/ep52.mp4">
   </video>
   <div oncontextmenu="return false;" id="video_controls_bar">
