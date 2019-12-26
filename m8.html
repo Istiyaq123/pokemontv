@@ -65,6 +65,18 @@ function playPause(){
         playbtn.innerHTML = "A";
     }
 }
+	
+function on(){
+	if(vid.paused){
+    	vid.play();
+        playbtn.innerHTML = "B";
+    } else {
+    	vid.pause();
+        playbtn.innerHTML = "A";
+    }
+}
+	
+
 function vidSeek(){
 	var seekto = vid.duration * (seekslider.value / 100);
     vid.currentTime = seekto;
@@ -109,7 +121,7 @@ function toggleFullScreen(){
 <body>
 <p style="font-family:arial;">Pok&eacute;mon The Movie 8: Lucario and the Mysery of Mew</p>
 <div id="video_player_box">
-  <video id="my_video" width="550" height="320" autoplay>
+  <video onclick="on()" id="my_video" width="550" height="320" autoplay>
     <source src="https://video.xx.fbcdn.net/v/t42.9040-2/10000000_230387547639274_537248181927280640_n.mp4?_nc_cat=105&efg=eyJ2ZW5jb2RlX3RhZyI6InN2ZV9zZCJ9&_nc_ohc=AOSmUhHOyB4AQn5c8vQ_Asy7nnngZ7SUJqKYfUQ6Cs3GPFWExU9gZK-Bw&_nc_ht=video.flhr4-2.fna&oh=5fd0de9ee292644a5d3479508b1235a8&oe=5E04CDBF">
   </video>
   <div id="video_controls_bar">
