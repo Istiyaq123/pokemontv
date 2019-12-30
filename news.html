@@ -59,7 +59,7 @@ input[type='range']::-webkit-slider-thumb {
   </div>
 </div>
 </center>
-	<p class="name"><i>Pokemon The First Movie: Mewtwo Strikes back</i> is here in <b id="timerdown">First of January</b></p>
+	<p class="name"><i>Pokemon The First Movie: Mewtwo Strikes back</i> is here on the <b>First of January</b></p>
 	<p class="name"><a href="s10/ep29">Pokémon Diamond and Pearl Episode 29: The Champ Twins!</a>&nbsp;<button onclick="document.getElementById('my_video').src='https://istiyaq123456.github.io/idk/dp28.mp4';document.getElementById('demo').innerHTML = 'Pokémon Diamond and Pearl Episode 29: The Champ Twins!';document.getElementById('toptitle').innerHTML = 'Pokémon Diamond and Pearl Episode 29: The Champ Twins!'">Watch</button> <strong>-- 1:15AM Monday 30th December 2019 (UTC)</strong></p>
 	<p class="name"><a href="s12/ep1">Pokémon DP: Galactic Battles Episode 1: Get Your Rotom Running!</a>&nbsp;<button onclick="document.getElementById('my_video').src='https://istiyaq123456.github.io/test/l.mp4';document.getElementById('demo').innerHTML = 'Pokémon DP: Galactic Battles Episode 1: Get Your Rotom Running!';document.getElementById('toptitle').innerHTML = 'Pokémon DP: Galactic Battles Episode 1: Get Your Rotom Running!'">Watch</button> <strong>-- 11:20PM Sunday 29th December 2019 (UTC)</strong></p>
 	<p class="name"><a href="s7/ep5">Pokémon Advanced Challenge Episode 5: Candid Camerupt</a>&nbsp;<button onclick="document.getElementById('my_video').src='http://s2.content.video.llnw.net/smedia/4953336d7f544f678a12270b176ea386/e7/0ojpm4rjh--GuYHivbeMJXVxY88ULmHhXdirWXBf8/0705---candid-camerupt.mp4';document.getElementById('demo').innerHTML = 'Pokémon Advanced Challenge Episode 5: Candid Camerupt';document.getElementById('toptitle').innerHTML = 'Pokémon Advanced Challenge Episode 5: Candid Camerupt'">Watch</button> <strong>-- 6:57 Saturday 28th December 2019 (UTC)</strong></p>
@@ -80,35 +80,6 @@ input[type='range']::-webkit-slider-thumb {
 
 <button onclick="goBack()">Go Back</button>
 <script>
-// Set the date we're counting down to
-var countDownDate = new Date("Jan 1, 2020 01:00:00").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("timerdown").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-    
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("timerdown").innerHTML = "EXPIRED";
-  }
-}, 1000);	
-
 function goBack() {
   window.history.back();
 }
