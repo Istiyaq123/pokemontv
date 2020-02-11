@@ -1,3 +1,4 @@
 # pokemontv
 Pokemon TV EPISODES
-Hi
+
+If You are Here go To https://pokemontv.netlify.com
