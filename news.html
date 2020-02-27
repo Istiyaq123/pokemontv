@@ -76,8 +76,14 @@ input[type='range']::-webkit-slider-thumb {
 </center>
 <br>
 
+<p class="name"><a href="s5"><i>Pok&eacute;mon: Master Quest</i></a><br>
+    <span class="tab"><a href="s5/ep26">Pok&eacute;mon: Master Quest Episode 26: Talkin' 'Bout an Evolution</a>&nbsp;<button class="tabbtn" onclick="watching()">Watch</button></span><br>
+    <span class="tab"><a href="s5/ep27">Pok&eacute;mon: Master Quest Episode 27: Rage Of Innocence</a><button class="tabbtn" onclick="document.getElementById('my_video').src='http://s2.content.video.llnw.net/smedia/4953336d7f544f678a12270b176ea386/27/-cFFr7FB1UuDN5eojvGq7l0vdMwJrO4k5j7RL_3eU/0527---rage-of-innocence.mp4';document.getElementById('demo').innerHTML = 'Pok&eacute;mon: Master Quest Episode 27: Rage Of Innocence';document.getElementById('toptitle').innerHTML = 'Pok&eacute;mon: Master Quest Episode 27: Rage Of Innocence'">Watch</button></span><br>
+    <strong>&mdash; 18:13, Thursday 27th February 2020 (UTC)</strong>
+</p>
+    
 <p class="name"><a href="s22"><i>Pok&eacute;mon the Series: Sun & Moon &mdash; Ultra Legends</i> Volume 1</a><br>
-    <span class="tab"><a href="s22/ep13"></a>&nbsp;<button class="tabbtn" onclick="document.getElementById('my_video').src='';document.getElementById('demo').innerHTML = '';document.getElementById('toptitle').innerHTML = ''">Watch</button></span><br>
+    <span class="tab"><a href="s22/ep1"></a>&nbsp;<button class="tabbtn" onclick="document.getElementById('my_video').src='';document.getElementById('demo').innerHTML = '';document.getElementById('toptitle').innerHTML = ''">Watch</button></span><br>
     <span class="tab"><a href="s22/ep14"></a></span><br>
     <span class="tab"><a href="s22/ep15"></a></span><br>
     <span class="tab"><a href="s22/ep16"></a></span><br>
@@ -188,6 +194,11 @@ function on() {
     	vid.pause();
         playbtn.innerHTML = "A";
     }
+}
+function watching(){
+    document.getElementById("my_video").src="http://s2.content.video.llnw.net/smedia/4953336d7f544f678a12270b176ea386/tf/k1g9XPApBFJSvbikp1KgMmxU0OByAGrHq4J6KAbFE/0526---talkin-bout-an-evolution.mp4";
+    document.getElementById("demo").innerHTML="Pok&eacute;mon: Master Quest Episode 26: Talkin' 'Bout an Evolution";
+    document.getElementById("toptitle").innerHTML="Pok&eacute;mon: Master Quest Episode 26: Talkin' 'Bout an Evolution";
 }
     </script>
 </body>
