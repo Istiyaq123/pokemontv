@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pok&eacute;mon: S13 Ep10</title>
+<style type="text/css">
+@font-face {
+  font-family: Myfont;
+  src: url(icon.ttf);
+}
+.button {
+  background-color: #968f78;
+  border: none;
+  color: white;
+  padding: 4px 5px;
+  text-align: center;
+  font-size: 16px;
+  font-family:Myfont;
+  cursor: pointer;
+}
+div#video_player_box{ width:550px; background:#000;}
+div#video_controls_bar{ background:#968f78; padding:10px; color:#ccc; font-family:arial;}
+input#volumeslider{ width: 80px}
+input[type='range']{
+	-webkit-appearance: none !important;
+    background: #000;
+    border: #666 1px solid;
+    height:4px;
+}
+input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none !important;
+    background: #FFF;
+    height: 15px;
+    width: 15px;
+    border-radius:100%;
+    cursor:pointer;
+}
+</style>
+<script>
+var vid, playbtn, seekslider, curtimetext, durtimetext, mutebtn, volumeslider, fullscreenbtn;
+function intializePlayer(){
+	// Set object references
+	vid = document.getElementById("my_video");
+    playbtn = document.getElementById("playpausebtn");
+    seekslider = document.getElementById("seekslider");
+    curtimetext = document.getElementById("curtimetext");
+    durtimetext = document.getElementById("durtimetext");
+    mutebtn = document.getElementById("mutebtn");
+    volumeslider = document.getElementById("volumeslider");
+    fullscreenbtn = document.getElementById("fullscreenbtn");
+    // Add event listeners
+    playbtn.addEventListener("click",playPause,false);
+    seekslider.addEventListener("change",vidSeek,false);
+    vid.addEventListener("timeupdate",seektimeupdate,false);
+    mutebtn.addEventListener("click",vidmute,false);
+    volumeslider.addEventListener("change",setvolume,false);
+    fullscreenbtn.addEventListener("click",toggleFullScreen,false);
+}
+window.onload = intializePlayer;
+function playPause(){
+	if(vid.paused){
+    	vid.play();
+        playbtn.innerHTML = "B";
+    } else {
+    	vid.pause();
+        playbtn.innerHTML = "A";
+    }
+}
+
+function on(){
+	if(vid.paused){
+    	vid.play();
+        playbtn.innerHTML = "B";
+    } else {
+    	vid.pause();
+        playbtn.innerHTML = "A";
+    }
+}
+function vidSeek(){
+	var seekto = vid.duration * (seekslider.value / 100);
+    vid.currentTime = seekto;
+}
+function seektimeupdate(){
+	var nt = vid.currentTime * (100 / vid.duration);
+    seekslider.value = nt;
+    var curmins = Math.floor(vid.currentTime / 60);
+    var cursecs = Math.floor(vid.currentTime - curmins * 60);
+    var durmins = Math.floor(vid.duration / 60);
+    var dursecs = Math.floor(vid.duration - durmins * 60);
+    if(cursecs < 10){ cursecs = "0"+cursecs; }
+    if(dursecs < 10){ dursecs = "0"+dursecs; }
+    if(curmins < 10){ curmins = "0"+curmins; }
+    if(durmins < 10){ durmins = "0"+durmins; }
+    curtimetext.innerHTML = curmins+":"+cursecs;
+    durtimetext.innerHTML = durmins+":"+dursecs;
+}
+function vidmute(){
+	if(vid.muted){
+    	vid.muted = false;
+        mutebtn.innerHTML = "L";
+    } else {
+    	vid.muted = true;
+        mutebtn.innerHTML = "M";
+    }
+}
+function setvolume(){
+	vid.volume = volumeslider.value / 100;
+}
+function toggleFullScreen(){
+	if(vid.requestFullScreen){
+    	vid.requestFullScreen();
+    } else if(vid.webkitRequestFullScreen){
+    	vid.webkitRequestFullScreen();
+    } else if(vid.mozRequestFullScreen){
+    	vid.mozRequestFullScreen();
+    }
+}
+</script>
+</head>
+<body>
+<p style="font-family:arial;">Pok&eacute;mon: DP Sinnoh League Victors Episode 10: The Fleeing Tower of Sunyshore!</p>
+<div id="video_player_box">
+  <video poster="https://assets.pokemon.com/assets/cms2/img/watch-pokemon-tv/seasons/season13/season13_ep09_ss02.jpg" onclick="on()" oncontextmenu="return false;" id="my_video" width="550" height="320" controlslist="nodownload nofullscreen" autoplay>
+    <source src="https://s2content.netlify.com/s13/ep10.mp4">
+  </video>
+  <div oncontextmenu="return false;" id="video_controls_bar">
+    <button class="button" id="playpausebtn">B</button>
+    <input id="seekslider" type="range" min="0" max="100" value="1" step="1" style="width:180px">
+    <span id="curtimetext"></span> / <span id="durtimetext"></span>
+    <button class="button" id="mutebtn">L</button>
+    <input id="volumeslider" type="range" min="0" max="100" value="100" step="1">
+    <button class="button" id="fullscreenbtn">D</button>
+  </div>
+</div>
+<p style="font-family:arial"><a href="\index">Pok&eacute;mon: the Series</a></p>
+<p style="font-family:arial"><a href="ep9">← Pokémon Episode 9: Flint Sparks the Fire!</a></p>
+<p style="font-family:arial"><a href="ep11">Pokémon Episode 11: Teaching the Student Teacher! →</a></p>
+<p style="font-family:arial"><a href="\s13">Pok&eacute;mon: DP Sinnoh League Victors Episodes</a></p>
+</body>
+</html>
