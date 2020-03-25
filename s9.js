@@ -1,4 +1,4 @@
-function onload(){
+function start(){
     var thirtysix = document.getElementById("36");
 
     thirtysix.addEventListener("mouseover",mouseOver);
