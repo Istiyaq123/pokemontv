@@ -2,10 +2,15 @@
 <html>
 <head>
 <title>Pok&eacute;mon: S10 Ep13</title>
-<style type="text/css">
+<link href="\icon.png" rel="icon">
+<style>
 @font-face {
   font-family: Myfont;
   src: url(icon.ttf);
+}
+@font-face {
+  font-family: Mytext;
+  src: url(big.woff);
 }
 .button {
   background-color: #968f78;
@@ -34,87 +39,13 @@ input[type='range']::-webkit-slider-thumb {
     border-radius:100%;
     cursor:pointer;
 }
+body{
+    font-family:arial;
+}
+.info{
+    font-family:Mytext;
+}
 </style>
-<script>
-var vid, playbtn, seekslider, curtimetext, durtimetext, mutebtn, volumeslider, fullscreenbtn;
-function intializePlayer(){
-	// Set object references
-	vid = document.getElementById("my_video");
-    playbtn = document.getElementById("playpausebtn");
-    seekslider = document.getElementById("seekslider");
-    curtimetext = document.getElementById("curtimetext");
-    durtimetext = document.getElementById("durtimetext");
-    mutebtn = document.getElementById("mutebtn");
-    volumeslider = document.getElementById("volumeslider");
-    fullscreenbtn = document.getElementById("fullscreenbtn");
-    // Add event listeners
-    playbtn.addEventListener("click",playPause,false);
-    seekslider.addEventListener("change",vidSeek,false);
-    vid.addEventListener("timeupdate",seektimeupdate,false);
-    mutebtn.addEventListener("click",vidmute,false);
-    volumeslider.addEventListener("change",setvolume,false);
-    fullscreenbtn.addEventListener("click",toggleFullScreen,false);
-}
-window.onload = intializePlayer;
-function playPause(){
-	if(vid.paused){
-    	vid.play();
-        playbtn.innerHTML = "B";
-    } else {
-    	vid.pause();
-        playbtn.innerHTML = "A";
-    }
-}
-	
-function on(){
-	if(vid.paused){
-    	vid.play();
-        playbtn.innerHTML = "B";
-    } else {
-    	vid.pause();
-        playbtn.innerHTML = "A";
-    }
-}
-function vidSeek(){
-	var seekto = vid.duration * (seekslider.value / 100);
-    vid.currentTime = seekto;
-}
-function seektimeupdate(){
-	var nt = vid.currentTime * (100 / vid.duration);
-    seekslider.value = nt;
-    var curmins = Math.floor(vid.currentTime / 60);
-    var cursecs = Math.floor(vid.currentTime - curmins * 60);
-    var durmins = Math.floor(vid.duration / 60);
-    var dursecs = Math.floor(vid.duration - durmins * 60);
-    if(cursecs < 10){ cursecs = "0"+cursecs; }
-    if(dursecs < 10){ dursecs = "0"+dursecs; }
-    if(curmins < 10){ curmins = "0"+curmins; }
-    if(durmins < 10){ durmins = "0"+durmins; }
-    curtimetext.innerHTML = curmins+":"+cursecs;
-    durtimetext.innerHTML = durmins+":"+dursecs;
-}
-function vidmute(){
-	if(vid.muted){
-    	vid.muted = false;
-        mutebtn.innerHTML = "L";
-    } else {
-    	vid.muted = true;
-        mutebtn.innerHTML = "M";
-    }
-}
-function setvolume(){
-	vid.volume = volumeslider.value / 100;
-}
-function toggleFullScreen(){
-	if(vid.requestFullScreen){
-    	vid.requestFullScreen();
-    } else if(vid.webkitRequestFullScreen){
-    	vid.webkitRequestFullScreen();
-    } else if(vid.mozRequestFullScreen){
-    	vid.mozRequestFullScreen();
-    }
-}
-</script>
 </head>
 <body>
 <p style="font-family:arial;">Pok&eacute;mon: Diamond and Pearl: Episode 13: A Staravia Is Born!</p>
@@ -131,9 +62,15 @@ function toggleFullScreen(){
     <button class="button" id="fullscreenbtn">D</button>
   </div>
 </div>
+<p class="info">Description: Ash is traveling through the forest on his way to Oreburgh City, where he hopes to earn his first Gym Badge in Sinnoh.</p>
 <p style="font-family:arial"><a href="\index">Pok&eacute;mon: The Series</a></p>
 <p style="font-family:arial"><a href="ep12">&larr; Pok&eacute;mon Episode 12: Arrival of a Rival!</a></p>
 <p style="font-family:arial"><a href="ep14">Pok&eacute;mon Episode 14: Leave It to Brocko! &rarr;</a></p>
 <p style="font-family:arial"><a href="\s10">Pok&eacute;mon Diamond and Pearl Episodes</a></p>
+<center>
+    <p id="info"></p>
+</center>
+<script src="https://istiyaq123.github.io/Custom-Video-Controls-Setting-Template/script.js"></script>
+<script src="https://pokemontv.netlify.com/notice.js"></script>
 </body>
 </html>
