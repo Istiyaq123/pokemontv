@@ -1,0 +1,37 @@
+@font-face {
+  font-family: Myfont;
+  src: url(icon.ttf);
+}
+.button {
+  background-color: #968f78;
+  border: none;
+  color: white;
+  padding: 4px 5px;
+  text-align: center;
+  font-size: 16px;
+  font-family:Myfont;
+  cursor: pointer;
+}
+div#video_player_box{ width:550px; background:#000;}
+div#video_controls_bar{ background:#968f78; padding:10px; color:#ccc; font-family:arial;}
+input#volumeslider{ width: 80px}
+input[type='range']{
+	-webkit-appearance: none !important;
+    background: #000;
+    border: #666 1px solid;
+    height:4px;
+}
+input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none !important;
+    background: #FFF;
+    height: 15px;
+    width: 15px;
+    border-radius:100%;
+    cursor:pointer;
+}
+p{
+  font-family:arial;
+}
+#info{
+  text-align:center;
+}
