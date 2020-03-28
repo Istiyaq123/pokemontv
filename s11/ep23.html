@@ -2,10 +2,15 @@
 <html>
 <head>
 <title>Pok&eacute;mon: S11 Ep23</title>
-<style type="text/css">
+<link href="\icon.png" rel="icon">
+<style>
 @font-face {
   font-family: Myfont;
   src: url(icon.ttf);
+}
+@font-face {
+  font-family: Mytext;
+  src: url(big.woff);
 }
 .button {
   background-color: #968f78;
@@ -34,93 +39,19 @@ input[type='range']::-webkit-slider-thumb {
     border-radius:100%;
     cursor:pointer;
 }
+body{
+    font-family:arial;
+}
+.info{
+    font-family:Mytext;
+}
 </style>
-<script>
-var vid, playbtn, seekslider, curtimetext, durtimetext, mutebtn, volumeslider, fullscreenbtn;
-function intializePlayer(){
-	// Set object references
-	vid = document.getElementById("my_video");
-    playbtn = document.getElementById("playpausebtn");
-    seekslider = document.getElementById("seekslider");
-    curtimetext = document.getElementById("curtimetext");
-    durtimetext = document.getElementById("durtimetext");
-    mutebtn = document.getElementById("mutebtn");
-    volumeslider = document.getElementById("volumeslider");
-    fullscreenbtn = document.getElementById("fullscreenbtn");
-    // Add event listeners
-    playbtn.addEventListener("click",playPause,false);
-    seekslider.addEventListener("change",vidSeek,false);
-    vid.addEventListener("timeupdate",seektimeupdate,false);
-    mutebtn.addEventListener("click",vidmute,false);
-    volumeslider.addEventListener("change",setvolume,false);
-    fullscreenbtn.addEventListener("click",toggleFullScreen,false);
-}
-window.onload = intializePlayer;
-function playPause(){
-	if(vid.paused){
-    	vid.play();
-        playbtn.innerHTML = "B";
-    } else {
-    	vid.pause();
-        playbtn.innerHTML = "A";
-    }
-}
-	
-function on(){
-	if(vid.paused){
-    	vid.play();
-        playbtn.innerHTML = "B";
-    } else {
-    	vid.pause();
-        playbtn.innerHTML = "A";
-    }
-}
-function vidSeek(){
-	var seekto = vid.duration * (seekslider.value / 100);
-    vid.currentTime = seekto;
-}
-function seektimeupdate(){
-	var nt = vid.currentTime * (100 / vid.duration);
-    seekslider.value = nt;
-    var curmins = Math.floor(vid.currentTime / 60);
-    var cursecs = Math.floor(vid.currentTime - curmins * 60);
-    var durmins = Math.floor(vid.duration / 60);
-    var dursecs = Math.floor(vid.duration - durmins * 60);
-    if(cursecs < 10){ cursecs = "0"+cursecs; }
-    if(dursecs < 10){ dursecs = "0"+dursecs; }
-    if(curmins < 10){ curmins = "0"+curmins; }
-    if(durmins < 10){ durmins = "0"+durmins; }
-    curtimetext.innerHTML = curmins+":"+cursecs;
-    durtimetext.innerHTML = durmins+":"+dursecs;
-}
-function vidmute(){
-	if(vid.muted){
-    	vid.muted = false;
-        mutebtn.innerHTML = "L";
-    } else {
-    	vid.muted = true;
-        mutebtn.innerHTML = "M";
-    }
-}
-function setvolume(){
-	vid.volume = volumeslider.value / 100;
-}
-function toggleFullScreen(){
-	if(vid.requestFullScreen){
-    	vid.requestFullScreen();
-    } else if(vid.webkitRequestFullScreen){
-    	vid.webkitRequestFullScreen();
-    } else if(vid.mozRequestFullScreen){
-    	vid.mozRequestFullScreen();
-    }
-}
-</script>
 </head>
 <body>
 <p style="font-family:arial;">Pok&eacute;mon: DP Battle Dimensions Episode 23: Staging A Heroes' Welcome!</p>
 <div id="video_player_box">
   <video onclick="on()" oncontextmenu="return false;" id="my_video" width="550" height="320" controlslist="nodownload nofullscreen" autoplay>
-    <source src="http://s2.content.video.llnw.net/smedia/4953336d7f544f678a12270b176ea386/EH/AujQD8XGsSH-zlfpKf7x28QTToOskOPSPl0FzAmU8/1123---staging-a-heroes-welcome.mp4">
+    <source src="http://s2.content.video.llnw.net/smedia/4953336d7f544f678a12270b176ea386/61/oA52QjssBtj87CNyRjVHqom97-j4cwB1d6TRsa-Ak/pok_tv_s1123_2398-master-en.mp4">
   </video>
   <div oncontextmenu="return false;" id="video_controls_bar">
     <button class="button" id="playpausebtn">B</button>
@@ -131,9 +62,15 @@ function toggleFullScreen(){
     <button class="button" id="fullscreenbtn">D</button>
   </div>
 </div>
+<p class="info">Description: The day before the Wallace Cup, Zoey shows up at Lake Valor for the competition.</p>
 <p style="font-family:arial"><a href="\index">Pok&eacute;mon: The Series</a></p>
 <p style="font-family:arial"><a href="ep22">&larr; Pok&eacute;mon Episode 22: A Full Course Tag Battle!</a></p>
 <p style="font-family:arial"><a href="ep24">Pok&eacute;mon Episode 24: Pruning a Passel of Pals! &rarr;</a></p>
 <p style="font-family:arial"><a href="\s11">Pok&eacute;mon: DP Battle Dimensions Episodes</a></p>
+<center>
+    <p id="info"></p>
+</center>
+<script src="https://istiyaq123.github.io/Custom-Video-Controls-Setting-Template/script.js"></script>
+<script src="https://pokemontv.netlify.com/notice.js"></script>
 </body>
 </html>
