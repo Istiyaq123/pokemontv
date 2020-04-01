@@ -1,6 +1,6 @@
 var info = document.getElementById("info");
 
-info.innerHTML = "<strong>&copy2020 Pok&eacute;mon / &copy The Pok&eacute;mon Company / &copy The Pok&eacute;mon Company / DuArt, Film and Video, inc</strong>"
+info.innerHTML = "<strong>&copy2020 Pok&eacute;mon / &copy The Pok&eacute;mon Company / &copy The Pok&eacute;mon Company / DuArt, Film and Video, inc</strong><br><b>Stay at Home / Save Lives</b>"
 
 
 if (screen.width <= 699) {
