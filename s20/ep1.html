@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="i\con.png" rel="icon">
 <title>Pok&eacute;mon: S20 Ep1</title>
-<style type="text/css">
+<link href="/icon.png" rel="icon">
+<style>
 @font-face {
   font-family: Myfont;
   src: url(icon.ttf);
+}
+@font-face {
+  font-family: Mytext;
+  src: url(big.woff);
 }
 .button {
   background-color: #968f78;
@@ -35,6 +39,12 @@ input[type='range']::-webkit-slider-thumb {
     border-radius:100%;
     cursor:pointer;
 }
+body{
+    font-family:arial;
+}
+.info{
+    font-family:Mytext;
+}
 </style>
 </head>
 <body>
@@ -52,11 +62,14 @@ input[type='range']::-webkit-slider-thumb {
     <button class="button" id="fullscreenbtn">D</button>
   </div>
 </div>
+<p class="info">Description: What begins as a vacation for our hero on Melemele Island in the Alola region turns into the promise of many, many exciting adventures to come!</p>
 <p style="font-family:arial"><a href="\index">Pok&eacute;mon: the Series</a></p>
 <p style="font-family:arial"><a href="ep2">Pok&eacute;mon Episode 2: The Guardian's Challenge! &rarr;</a></p>
 <p style="font-family:arial"><a href="\s20">Pok&eacute;mon the Series: Sun & Moon Episodes</a></p>
-<center><p id="info"></p></center>
+<center>
+    <p id="info"></p>
+</center>
 <script src="https://istiyaq123.github.io/Custom-Video-Controls-Setting-Template/script.js"></script>
-<script src="\notice.js"></script>
+<script src="https://pokemontv.netlify.com/notice.js"></script>
 </body>
 </html>
