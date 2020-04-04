@@ -29,9 +29,19 @@
       .largetext{
         font-size: 10px;
       }
+      i::before {
+        content: url(https://assets.pokemon.com/static2/_ui/img/chrome/video-play-button.png);
+        position: absolute;
+        transform: translate(47px, 3.5px);
+      }
+      i:hover:before {
+        content: url(https://assets.pokemon.com/static2/_ui/img/chrome/video-play-button-hover.png);
+        position: absolute;
+        transform: translate(47px, 3.5px);
+      }
     </style>
   </head>
-  <body onload="start()">
+  <body>
     <p class="img"><img src="https://cdn.bulbagarden.net/upload/d/d9/Battle_Frontier_logo.png" width="400"></p>
     <center>
       <table>
@@ -158,7 +168,7 @@
               <td><a href="s9/ep25">Second Time's the Charm!</a></td>
               <td><a href="s9/ep26"><span class="largetext">Pok&eacute;mon Ranger - Deoxys' Crisis! Part 1</span></a></td>
               <td><a href="s9/ep27"><span class="largetext">Pok&eacute;mon Ranger - Deoxys' Crisis! Part 2</span></a></td>
-              <td><a href="s9/ep28"><span style="font-size: 14px">All That Glitters is Not Golden!</a></td>
+              <td><a href="s9/ep28"><span style="font-size: 14px">All That Glitters is Not Golden!</span></a></td>
               <td><a href="s9/ep29">New Plot, Odd Lot!</a></td>
               <td><a href="s9/ep30">Going for Choke!</a></td>
             </tr>
@@ -168,7 +178,7 @@
               <td><a href="s9/ep33"><img src="https://assets.pokemon.com/assets/cms2/img/watch-pokemon-tv/seasons/season09/season09_ep33_ss04.jpg" width="200"></a></td>
               <td><a href="s9/ep34"><img src="https://assets.pokemon.com/assets/cms2/img/watch-pokemon-tv/seasons/season09/season09_ep34_ss04.jpg" width="200"></a></td>
               <td><a href="s9/ep35"><img src="https://assets.pokemon.com/assets/cms2/img/watch-pokemon-tv/seasons/season09/season09_ep35_ss01.jpg" width="200"></a></td>
-              <td><a href="s9/ep36"><img id="36" src="https://pkk.netlify.com/img/s9/36.png" width="200"></a></td>
+              <td><a href="s9/ep36"><i><img src="https://assets.pokemon.com/assets/cms2/img/watch-pokemon-tv/seasons/season09/season09_ep36_ss03.jpg" width="200"></i></a></td>
             </tr>
             <tr>
               <td><a href="s9/ep31">Episode 31</a></td>
@@ -238,7 +248,6 @@
     <center>
       <p id="info"></p>
     </center>
-    <script src="s9.js"></script>
     <script src="notice.js"></script>
   </body>
 </html>
