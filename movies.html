@@ -1,10 +1,22 @@
+<!DOCTYPE html>
 <html>
 <head>
-	<style type="text/css">p {
-      font-family:arial;
-    }
+	<style>
+	  p {
+        font-family:arial;
+      }
       body {
         font-family:arial;
+      }
+      i::before {
+        content: url(https://assets.pokemon.com/static2/_ui/img/chrome/video-play-button.png);
+        position: absolute;
+        transform: translate(100px, 35px);
+      }
+      i:hover:before {
+        content: url(https://assets.pokemon.com/static2/_ui/img/chrome/video-play-button-hover.png);
+        position: absolute;
+        transform: translate(100px, 35px);
       }
 	</style>
 	<title>Pok&eacute;mon the Movies</title>
@@ -43,7 +55,7 @@
 			<td style="width: 103px;"><img alt="movie_05" src="https://assets.pokemon.com/assets/cms2/img/watch-pokemon-tv/movies/movie05/movie05_ss01.jpg" width="300" /></td>
 			<td style="width: 369px;"><img alt="movie_06" src="https://assets.pokemon.com/assets/cms2/img/watch-pokemon-tv/movies/movie06/movie06_ss01.jpg" width="300" /></td>
 			<td><img alt="movie_06" src="https://assets.pokemon.com/assets/cms2/img/watch-pokemon-tv/movies/movie07/movie07_ss01.jpg" width="300" /></td>
-			<td><a href="m8"><img alt="movie_06" src="https://assets.pokemon.com/assets/cms2/img/watch-pokemon-tv/movies/movie08/movie08_ss01.jpg" width="300" /></a></td>
+			<td><a href="m8"><i><img alt="movie_06" src="https://assets.pokemon.com/assets/cms2/img/watch-pokemon-tv/movies/movie08/movie08_ss01.jpg" width="300" /></i></a></td>
 		</tr>
 		<tr>
 			<td style="width: 103px;">2003</td>
