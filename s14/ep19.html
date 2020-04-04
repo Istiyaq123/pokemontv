@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pok&eacute;mon: S14 Ep19</title>
+<link href="/icon.png" rel="icon">
+<style>
+@font-face {
+  font-family: Myfont;
+  src: url(icon.ttf);
+}
+@font-face {
+  font-family: Mytext;
+  src: url(big.woff);
+}
+.button {
+  background-color: #968f78;
+  border: none;
+  color: white;
+  padding: 4px 5px;
+  text-align: center;
+  font-size: 16px;
+  font-family:Myfont;
+  cursor: pointer;
+}
+div#video_player_box{ width:550px; background:#000;}
+div#video_controls_bar{ background:#968f78; padding:10px; color:#ccc; font-family:arial;}
+input#volumeslider{ width: 80px}
+input[type='range']{
+	-webkit-appearance: none !important;
+    background: #000;
+    border: #666 1px solid;
+    height:4px;
+}
+input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none !important;
+    background: #FFF;
+    height: 15px;
+    width: 15px;
+    border-radius:100%;
+    cursor:pointer;
+}
+body{
+    font-family:arial;
+}
+.info{
+    font-family:Mytext;
+}
+</style>
+</head>
+<body>
+<p style="font-family:arial;">Pok&eacute;mon: Black & White Episode 19: A Connoisseur's Revenge!</p>
+<div id="video_player_box">
+  <video poster="https://assets.pokemon.com/assets/cms2/img/watch-pokemon-tv/seasons/season14/season14_ep19_ss01.jpg" onclick="on()" oncontextmenu="return false;" id="my_video" width="550" height="320" controlslist="nodownload nofullscreen" autoplay>
+    <source src="http://s2.content.video.llnw.net/smedia/4953336d7f544f678a12270b176ea386/Fj/BzAS7xnlCTHGjjySRKclpJd2ID39wHuw08zfUUXLY/1419---a-connoisseurs-revenge.mp4">
+  </video>
+  <div oncontextmenu="return false;" id="video_controls_bar">
+    <button class="button" id="playpausebtn">B</button>
+    <input id="seekslider" type="range" min="0" max="100" value="1" step="1" style="width:180px">
+    <span id="curtimetext"></span> / <span id="durtimetext"></span>
+    <button class="button" id="mutebtn">L</button>
+    <input id="volumeslider" type="range" min="0" max="100" value="100" step="1">
+    <button class="button" id="fullscreenbtn">D</button>
+  </div>
+</div>
+<p class="info">Description: Our heroes visit a brand-new Poké Mart on their way to Castelia City, where they come across a most unusual Pokémon Connoisseur!</p>
+<p style="font-family:arial"><a href="/index">Pok&eacute;mon: The Series</a></p>
+<p style="font-family:arial"><a href="ep18">← Pokémon Episode 18: Sewaddle and Burgh in Pinwheel Forest!</a></p>
+<p style="font-family:arial"><a href="ep20">Pokémon Episode 20: Dancing With the Ducklett Trio! →</a></p>
+<p style="font-family:arial"><a href="/s14">Pok&eacute;mon: Black & White Episodes</a></p>
+<center>
+    <p id="info"></p>
+</center>
+<script src="https://istiyaq123.github.io/Custom-Video-Controls-Setting-Template/script.js"></script>
+<script src="https://pokemontv.netlify.com/notice.js"></script>
+</body>
+</html>
